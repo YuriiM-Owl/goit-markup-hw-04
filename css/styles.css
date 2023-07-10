@@ -29,7 +29,7 @@
   --c-decoration-light: #f4f4fd; /* CLOUD */
   --c-modal-bg: #fcfcfc; /* DAIRY */
   --c-modal-ovl: rgba(46, 47, 66, 0.4); /* NAVY BLUE modal */
-  --c-hero-bg: rgba(46, 47, 66, 0.698); /* GREY */
+  --c-hero-bg: rgba(46, 47, 66, 0.7); /* GREY */
 
   /* effects */
   --c-success: #31d0aa; /* GREEN */
@@ -234,11 +234,7 @@ img {
   margin: 0 auto;
   padding: 188px 0;
   background-color: var(--c-decoration-dark);
-  background-image: linear-gradient(
-      to bottom,
-      var(--c-hero-bg),
-      var(--c-hero-bg)
-    ),
+  background-image: linear-gradient(var(--c-hero-bg), var(--c-hero-bg)),
     url(../images/hero-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -262,6 +258,7 @@ img {
   background-color: var(--c-primary);
   min-width: 169px;
   height: 56px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-btn:hover,
 .order-btn:focus {

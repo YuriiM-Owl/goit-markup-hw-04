@@ -284,15 +284,18 @@ img {
 
 .about-list-item .thumb {
   background-color: var(--c-decoration-light);
-  text-align: center;
-  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 112px;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
-.about-ico {
+/* .about-ico {
   width: 64px;
   height: 64px;
-}
+} */
 
 /** --------------- What we are doing / Product --------------- */
 .product.section {

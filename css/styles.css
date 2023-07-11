@@ -141,6 +141,8 @@ img {
 /*! ------------------------ Header ------------------------ */
 .page-header {
   border-bottom: 1px solid var(--c-accent);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .page-header .container {
@@ -177,7 +179,24 @@ img {
 .nav-link {
   padding: 24px 0;
   color: var(--c-decoration-dark);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-link.active-now {
+  color: var(--c-effect);
+  position: relative;
+}
+.nav-link.active-now::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--c-effect);
+  border-radius: 2px;
+}
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--c-effect);
@@ -197,6 +216,7 @@ img {
   color: var(--c-text-main);
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus {
@@ -327,15 +347,89 @@ img {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   flex-basis: calc((100% - 3 * 24px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-list-item .info-box {
-  padding: 32px 16px;
+  padding: 32px 0;
+}
+
+.team-socials-list {
+  padding: 0 16px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.team-socials-item {
+  width: 40px;
+  height: 40px;
+}
+
+.team-socials-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-socials-link:hover,
+.team-socials-link:focus {
+  background-color: var(--c-effect);
+}
+
+.team-socials-icon {
+  fill: var(--c-decoration-light);
 }
 
 .team .local-title,
 .team .text {
   text-align: center;
+}
+
+.team .text {
+  margin-bottom: 8px;
+}
+
+/** ------------------------ Customers ------------------------ */
+.customers.section {
+  padding: 120px 0;
+}
+
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+
+.customers-item {
+  height: 88px;
+  flex-basis: calc((100% - 24px * 5) / 6);
+}
+
+.customers-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--c-text-subtle);
+  color: var(--c-text-subtle);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.customers-link:hover,
+.customers-link:focus {
+  color: var(--c-effect);
+  border-color: var(--c-effect);
+}
+
+.customers-icon {
+  fill: currentColor;
 }
 
 /*! ------------------------ Portfolio Main ------------------------ */
@@ -358,6 +452,10 @@ img {
   color: var(--c-primary);
   background-color: var(--c-decoration-light);
   border: 1px solid var(--c-accent);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
